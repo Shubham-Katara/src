@@ -1,0 +1,74 @@
+<html>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='/css/style.css')}}"> </link>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<body>
+    <div class="login">
+       <h1>PD Model</h1>
+   
+       <form>
+        <h1>
+            <legend>Probability of Default Prediction</legend>
+        </h1>
+        <div class="mb-3">
+            <!--Creating Grade-->
+            <label class="form-label">Grade</label>
+            <select class="form-control" name="Grade" id="Grade" placeholder="Enter you Grade" required>
+                <option class="placeholder" selected disabled value="">Select your Grade</option>
+                <option value="Grade:A">
+                    A
+                </option>
+                <option value="Grade:B">
+                    B
+                </option>
+                <option value="Grade:C">
+                    C
+                </option>
+                <option value="Grade:D">
+                    D
+                </option>
+                <option value="Grade:E">
+                    E
+                </option>
+                <option value="Grade:F">
+                    F
+                </option>
+                <option value="Grade:G">
+                    G
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Issue Date(Before 2015)</label>
+            <input type="date" name="IssueDate" id="IssueDate">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Interest Rate</label>
+            <input type="number" name="InterestRate" id="InterestRate">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Annual Income</label>
+            <input type="number" name="income" id="income">
+        </div>
+        <div class="mb-3">
+            <input class="btn btn-primary" id="send" type="submit" value="Predict Prob. of Default" required />
+        </div>
+    </form target="/predictdata">
+    <div class="show-data">
+    <h2>
+       Prob. of Default is {{result}}
+    </h2>
+    <h2>
+        Prob. of Default is {{result1}}
+     </h2>
+     <h2>
+        Prob. of Default is {{result2}}
+     </h2>
+     <h2>
+        Prob. of Default is {{resul3}}
+     </h2>
+     <h2>
+        Prob. of Default is {{result4}}
+     </h2>
+    <script src="{{url_for('static', filename='/script/script.js')}}"></script>
+    </body>
+</html>
